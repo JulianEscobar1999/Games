@@ -1,3 +1,4 @@
+package pruebaAhorcado
 import java.io.*;
 import java.util.*;
 
