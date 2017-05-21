@@ -4,9 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.event.*;
@@ -16,17 +13,15 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Estudiante
+ * @author Julian Escobar
  */
-public class NewPanel1 extends JPanel implements KeyListener, ActionListener,MouseListener{
+public class NewPanel1 extends JPanel implements ActionListener,MouseListener{
     private Timer timer;
     private int secuencia1;
     private int x,contador,delX, delY,a,b,c,d,e,f,h,n,score;
-    
+         
     public NewPanel1() {
-        this.addMouseListener(this);
-        addKeyListener(new TAdapter());
-        setFocusable(true);
+        this.addMouseListener(this);       
         this.timer=new Timer(25,this);
         this.timer.start();
         this.x=0;
@@ -40,12 +35,7 @@ public class NewPanel1 extends JPanel implements KeyListener, ActionListener,Mou
     }
     @Override
     public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        
-        
-        
-        
-        //Image background = loadImage("blue_background.png");
+        super.paintComponent(g);                                       
         Image inCards = loadImage("invCar.jpg");        
         Image goku= loadImage("goku.jpg");
         Image cardumen= loadImage("cardumen.jpg");
@@ -110,33 +100,11 @@ public class NewPanel1 extends JPanel implements KeyListener, ActionListener,Mou
         ImageIcon ii=new ImageIcon(imageName);
         Image image = ii.getImage();
         return image;
-    }
-    @Override
-    public void keyTyped(KeyEvent e) {
-        
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-       
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        
-    }
-
+    }  
     @Override
     public void actionPerformed(ActionEvent e) {
-        repaint();
-        if(this.secuencia1==4){
-            this.secuencia1=0;
-        }                
-    }
-    
-    
-    
-    
+        repaint();                  
+    }       
     @Override
     public void mouseClicked(MouseEvent e) {
         Point mp = e.getPoint();
@@ -254,28 +222,23 @@ public class NewPanel1 extends JPanel implements KeyListener, ActionListener,Mou
         }
         
         System.out.println("contador"+contador);
-    }
-    
+    }   
     @Override
     public void mousePressed(MouseEvent me) {
         
     }
-
     @Override
     public void mouseReleased(MouseEvent me) {
         
     }
-
     @Override
     public void mouseEntered(MouseEvent me) {
        
     }
-
     @Override
     public void mouseExited(MouseEvent me) {
        
-    }
-    
+    }    
     public Rectangle ceroCero(){        
         return new Rectangle(0, 0, 120, 120);
     }
@@ -327,32 +290,5 @@ public class NewPanel1 extends JPanel implements KeyListener, ActionListener,Mou
     
     
     
-   private class TAdapter extends KeyAdapter{
-        @Override
-        public void keyReleased(KeyEvent e){
-            System.out.println("tecla soltada");
-        }
-        @Override
-        public void keyPressed(KeyEvent e){
-            System.out.println("tecla presionada");
-            int key = e.getKeyCode();
-            if(key==KeyEvent.VK_SPACE){
-                System.out.println("VK_SPACE");
-            }
-            if(key==KeyEvent.VK_UP){
-                
-            }
-            if(key==KeyEvent.VK_LEFT){
-                
-            }
-            if(key==KeyEvent.VK_RIGHT){
-                x=x-5;
-                secuencia1++;
-                System.out.println("hi");
-            }
-            if(key==KeyEvent.VK_DOWN){
-                
-            }
-        }
-    }
+ 
 }
