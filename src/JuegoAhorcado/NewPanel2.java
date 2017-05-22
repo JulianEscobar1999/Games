@@ -13,10 +13,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Julian Escobar
- */
+
 class NewPanel2 extends JPanel implements ActionListener,MouseListener,KeyListener{
     private Timer timer;
     private int secuencia1;
@@ -41,15 +38,15 @@ class NewPanel2 extends JPanel implements ActionListener,MouseListener,KeyListen
         this.Str = new String[10];
         this.salida = 0;
         //solo mayusculas, Con minusculas toca extender el if
-        Str[0]="ALEMANIA";
-        Str[1]="COLOMBIA";
-        Str[2]="CHILE";
-        Str[3]="AFGANISTAN";
-        Str[4]="ESPAÑA";
+        Str[0]="ALMOHADA";
+        Str[1]="SEBASTIAN";
+        Str[2]="CUADERNO";
+        Str[3]="CORTINA";
+        Str[4]="AEROSOL";
         Str[5]="MEXICO";
-        Str[7]="NICARAGUA"; 
+        Str[7]="COMPUTADOR"; 
         Str[8]="RUMANIA";               
-        Str[9]="UCRANIA";               
+        Str[9]="MURCIELAGO";               
         
     }
     @Override
