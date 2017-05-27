@@ -1,5 +1,5 @@
 
-package game;
+package Escenario;
 import javax.swing.*;
 import java.awt.Graphics;
 
